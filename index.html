@@ -19,19 +19,21 @@
             -webkit-user-select: none;
             user-select: none;
         }
-        
+
         :root {
-            --primary-color: #6a11cb;
-            --secondary-color: #2575fc;
-            --accent-color: #ff0084;
+            /* Changed from blue/purple to red/orange/yellow */
+            --primary-color: #e63946; /* A vibrant red */
+            --secondary-color: #ffbe0b; /* A bright yellow/orange */
+            --accent-color: #fb5607; /* A strong orange */
             --text-color: #ffffff;
-            --button-bg: rgba(106, 17, 203, 0.7);
-            --button-hover: rgba(37, 117, 252, 0.8);
+            --button-bg: rgba(230, 57, 70, 0.7); /* Red with opacity */
+            --button-hover: rgba(255, 190, 11, 0.8); /* Yellow/orange with opacity */
         }
-        
+
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            /* Changed background gradient to reflect new colors */
+            background: linear-gradient(135deg, #1c0a0a, #4a1e1e, #3e2424); /* Darker reds/browns for depth */
             color: var(--text-color);
             margin: 0;
             min-height: 100vh;
@@ -52,7 +54,7 @@
             z-index: -1;
             overflow: hidden;
         }
-        
+
         .bubble {
             position: absolute;
             bottom: -100px;
@@ -60,7 +62,7 @@
             border-radius: 50%;
             animation: float 15s infinite ease-in;
         }
-        
+
         @keyframes float {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -74,64 +76,65 @@
                 opacity: 0;
             }
         }
-        
+
         .container {
             width: 100%;
             max-width: 500px;
             padding: 2rem;
             position: relative;
         }
-        
+
         .card {
-            background: rgba(15, 12, 41, 0.8);
+            background: rgba(15, 12, 41, 0.8); /* Kept dark background for contrast */
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 2.5rem;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
-                        0 0 50px rgba(106, 17, 203, 0.3);
+                        0 0 50px rgba(230, 57, 70, 0.3); /* Shadow now red-tinted */
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
         }
-        
+
         .logo {
             font-size: 2.8rem;
             font-weight: 900;
             text-align: center;
             margin-bottom: 2.5rem;
             font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(45deg, #ff0084, #6a11cb, #2575fc, #00ffd5);
+            /* Adjusted logo gradient to red/orange/yellow spectrum */
+            background: linear-gradient(45deg, #fb5607, #ff006e, #ffbe0b, #ffe81a);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
             letter-spacing: 2px;
-            animation: 
+            animation:
                 gradientShift 8s ease infinite,
                 wave 3s ease-in-out infinite;
         }
-        
+
         /* تأثير التمويه والتغير التدريجي */
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
+
         /* تأثير الرفرفة */
         @keyframes wave {
             0%, 100% { transform: rotate(-2deg); }
             50% { transform: rotate(2deg); }
         }
-        
+
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
             margin-bottom: 2rem;
         }
-        
+
         .menu-item {
             background: var(--button-bg);
             color: white;
@@ -152,31 +155,31 @@
             font-size: 1.2rem;
             animation: float-up 4s ease-in-out infinite;
         }
-        
+
         /* تأثير الرفرفة للأزرار */
         @keyframes float-up {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
-        
+
         /* توقيت مختلف لكل زر */
         .menu-item:nth-child(1) { animation-delay: 0.1s; }
         .menu-item:nth-child(2) { animation-delay: 0.3s; }
         .menu-item:nth-child(3) { animation-delay: 0.5s; }
         .menu-item:nth-child(4) { animation-delay: 0.7s; }
-        
+
         .menu-item:hover {
             background: var(--button-hover);
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
             animation: none; /* إيقاف التحريك عند hover */
         }
-        
+
         .menu-item i {
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
-        
+
         .music-player {
             background: rgba(0, 0, 0, 0.4);
             border-radius: 50px;
@@ -188,9 +191,10 @@
             font-family: 'Tajawal', sans-serif;
             font-weight: 700;
         }
-        
+
         .music-control {
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            /* Adjusted music control button gradient */
+            background: linear-gradient(45deg, #e63946, #fb5607);
             border: none;
             color: white;
             font-size: 1.5rem;
@@ -203,46 +207,71 @@
             justify-content: center;
             transition: all 0.3s;
         }
-        
+
         .music-control:hover {
             transform: scale(1.1);
+        }
+
+        /* Style for the visitor counter */
+        .visitor-counter {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .visitor-counter span {
+            color: var(--secondary-color); /* Highlight the number */
+            font-size: 1.2rem;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <div class="bg-bubbles" id="bubbles"></div>
-    
+
     <div class="container">
         <div class="card">
-            <div class="logo">BRIGHT LiNK</div>
-            
+            <div class="logo">BRiGHT LiNK</div>
+
             <div class="menu-grid">
-                <a href="https://t.me/xxscp" class="menu-item">
+                <a href="https://t.me/XXSCP" class="menu-item">
                     <i class="fas fa-cogs"></i>
                     <span class="arabic-text">قناتي مودات</span>
                 </a>
-                
+
                 <a href="tg://openmessage?user_id=8139154484" class="menu-item">
                     <i class="fas fa-user"></i>
                     <span class="arabic-text">حسابي الاساسي</span>
                 </a>
-                
+
                 <a href="https://t.me/iiP44" class="menu-item">
                     <i class="fas fa-comments"></i>
-                    <span class="arabic-text">مجموعتي العامة</span>
+                    <span class="arabic-text">مجموعتي الوحيدة</span>
                 </a>
-                
+
                 <a href="https://t.me/ModsMK" class="menu-item">
                     <i class="fab fa-telegram"></i>
                     <span class="arabic-text">قناة عشوائيات</span>
                 </a>
             </div>
-            
+
             <div class="music-player">
-                <span class="arabic-text">SPACE MUSIC</span>
+                <span class="arabic-text">Listen to the Quran</span>
                 <button class="music-control" id="musicToggle">
                     <i class="fas fa-play" id="musicIcon"></i>
                 </button>
+            </div>
+
+            <div class="visitor-counter">
+                <span class="arabic-text">عدد الزوار:</span>
+                <span id="visitorCount" class="arabic-text">0</span>
             </div>
         </div>
     </div>
@@ -256,34 +285,34 @@
         function createBubbles() {
             const bubblesContainer = document.getElementById('bubbles');
             const bubbleCount = 15;
-            
+
             for (let i = 0; i < bubbleCount; i++) {
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
-                
+
                 // حجم عشوائي
                 const size = Math.random() * 100 + 50;
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
-                
+
                 // موقع بداية عشوائي
                 bubble.style.left = `${Math.random() * 100}%`;
-                
+
                 // مدة وتأخير عشوائي
                 const duration = Math.random() * 20 + 10;
                 const delay = Math.random() * 15;
                 bubble.style.animation = `float ${duration}s ${delay}s infinite`;
-                
+
                 bubblesContainer.appendChild(bubble);
             }
         }
-        
+
         // التحكم بالموسيقى
         const musicToggle = document.getElementById('musicToggle');
         const musicIcon = document.getElementById('musicIcon');
         const bgMusic = document.getElementById('bgMusic');
         let isMusicPlaying = false;
-        
+
         musicToggle.addEventListener('click', function() {
             if (isMusicPlaying) {
                 bgMusic.pause();
@@ -294,8 +323,21 @@
             }
             isMusicPlaying = !isMusicPlaying;
         });
-        
-        // منع الحركة والتحكم
+
+        // Visitor Counter Logic
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitor_count');
+            if (count === null) {
+                count = 0;
+            } else {
+                count = parseInt(count);
+            }
+            count++;
+            localStorage.setItem('visitor_count', count);
+            document.getElementById('visitorCount').textContent = count;
+        }
+
+        // Prevent zooming/panning and context menu
         document.addEventListener('touchmove', function(event) {
             event.preventDefault();
         }, { passive: false });
@@ -307,10 +349,11 @@
         document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
         });
-        
-        // تهيئة البقع عند تحميل الصفحة
+
+        // Initialize on page load
         window.onload = function() {
             createBubbles();
+            updateVisitorCount(); // Call this to update the count on load
         };
     </script>
 </body>
