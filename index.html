@@ -21,19 +21,23 @@
         }
 
         :root {
-            /* Changed from blue/purple to red/orange/yellow */
-            --primary-color: #e63946; /* A vibrant red */
-            --secondary-color: #ffbe0b; /* A bright yellow/orange */
-            --accent-color: #fb5607; /* A strong orange */
+            /* Changed to Teal, Green, and Gold/Yellow */
+            --primary-color: #0081a7; /* Deep Teal */
+            --secondary-color: #00afb9; /* Brighter Teal */
+            --accent-color: #fdfcdc; /* Light Yellow/Cream */
             --text-color: #ffffff;
-            --button-bg: rgba(230, 57, 70, 0.7); /* Red with opacity */
-            --button-hover: rgba(255, 190, 11, 0.8); /* Yellow/orange with opacity */
+            --button-bg: rgba(0, 129, 167, 0.7); /* Teal with opacity */
+            --button-hover: rgba(0, 175, 185, 0.8); /* Brighter Teal with opacity */
+            --card-bg: rgba(10, 20, 30, 0.8); /* Darker background for contrast */
+            --bg-gradient-start: #004d40; /* Dark Green */
+            --bg-gradient-mid: #00796b; /* Medium Green */
+            --bg-gradient-end: #004d40; /* Dark Green */
         }
 
         body {
             font-family: 'Tajawal', sans-serif;
-            /* Changed background gradient to reflect new colors */
-            background: linear-gradient(135deg, #1c0a0a, #4a1e1e, #3e2424); /* Darker reds/browns for depth */
+            /* New background gradient: Greenish/Teal */
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
             color: var(--text-color);
             margin: 0;
             min-height: 100vh;
@@ -85,12 +89,12 @@
         }
 
         .card {
-            background: rgba(15, 12, 41, 0.8); /* Kept dark background for contrast */
+            background: var(--card-bg); /* Use new card background variable */
             backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 2.5rem;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
-                        0 0 50px rgba(230, 57, 70, 0.3); /* Shadow now red-tinted */
+                        0 0 50px rgba(0, 129, 167, 0.3); /* Shadow now teal-tinted */
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
@@ -102,8 +106,8 @@
             text-align: center;
             margin-bottom: 2.5rem;
             font-family: 'Orbitron', sans-serif;
-            /* Adjusted logo gradient to red/orange/yellow spectrum */
-            background: linear-gradient(45deg, #fb5607, #ff006e, #ffbe0b, #ffe81a);
+            /* Adjusted logo gradient to Teal, Green, and Yellow */
+            background: linear-gradient(45deg, #0081a7, #00afb9, #ffd670, #fdfcdc);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
@@ -194,7 +198,7 @@
 
         .music-control {
             /* Adjusted music control button gradient */
-            background: linear-gradient(45deg, #e63946, #fb5607);
+            background: linear-gradient(45deg, #0081a7, #00afb9);
             border: none;
             color: white;
             font-size: 1.5rem;
